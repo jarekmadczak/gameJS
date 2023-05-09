@@ -7,6 +7,7 @@ class Person extends GameObject{
         this.dmg= 5;
         this.hp = 3;
         this.speed = 1;
+        this.dl=10;
         this.movingProgressRamaining = 1;
         this.direction = "right";  //last drieciton
         this.attackspeed=500;

@@ -13,7 +13,7 @@ ChooseingMenu(){
     div.style.textAlign="center"
     div.style.color = "white";
     div.style.marginBottom = "300px";
-    div.innerHTML =("<a>menu wyboru iemow:<a>"+"<br>"+"<button id='hp'>dokup HP</button>"
+    div.innerHTML =("<a>menu wyboru iemow:<a>"+"<br>"+"<button id='aszyb'>szybksoc ataku</button>"
     +"<br>"+
     "<button id='dl'>dokup Długosc</button>" +"<br>"+
     "<button id='szyb'>dokup szybkosc</button>" +"<br>"+

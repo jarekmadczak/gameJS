@@ -63,6 +63,8 @@ Object.values(this.map.enemys).forEach(object => {
         this.iloscwroga--;
         if(this.XP==this.XPRequired){
             this.ChooseingWeapon=false;
+            this.XP=0;
+            this.XPRequired=this.XPRequired*2;
         }
         
         object.zabito=true;  
@@ -137,12 +139,47 @@ if(this.PlayerAlive ){//&& this.ChooseingWeapon){//pauzujemy gre do menu i deda
     }else{
         this.menu.ChooseingMenu()
         let adddmg=document.getElementById("adddmg");
+        let speed=document.getElementById("szyb");
+        let aspeed=document.getElementById("aszyb");
+        let dl=document.getElementById("dl");
+
         adddmg.addEventListener("click",()=>{
             Object.values(this.map.persons).forEach(ob => {
             this.iloscUlepszen++;
-            console.log("added gmg");
             ob.dmg++;
             
+            })
+            this.ChooseingWeapon=true;
+            this.menu.deleteMenu();
+            step();
+            
+        })
+
+        speed.addEventListener("click",()=>{
+            Object.values(this.map.persons).forEach(ob => {
+            this.iloscUlepszen++;
+            ob.speed++;
+            })
+            this.ChooseingWeapon=true;
+            this.menu.deleteMenu();
+            step();
+            
+        })
+
+        aspeed.addEventListener("click",()=>{
+            Object.values(this.map.persons).forEach(ob => {
+            this.iloscUlepszen++;
+            ob.attackspeed=ob.attackspeed-50;
+            })
+            this.ChooseingWeapon=true;
+            this.menu.deleteMenu();
+            step();
+        })
+
+        dl.addEventListener("click",()=>{
+            Object.values(this.map.persons).forEach(ob => {
+            this.iloscUlepszen++;
+            ob.dl++;
             })
             this.ChooseingWeapon=true;
             this.menu.deleteMenu();
