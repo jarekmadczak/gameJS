@@ -4,11 +4,13 @@ class Enemy_Slime extends GameObject{
         this.zabito=false;
         this.dmg= 1;
         this.hp = 10;
-        this.speed = 1;
+        this.speed = 0.5;
         this.width=this.wycinek;
         this.height=this.wycinek;
-    
+        this.xp=1;
+       
     }
+    
     draw(ctx,cameraperson) {
         ctx.fillStyle = this.color;
         if (this.health > 1) {
@@ -16,7 +18,7 @@ class Enemy_Slime extends GameObject{
         } else {
           ctx.strokeStyle = this.color;
         }
-        
+        //hit box
         //ctx.fillRect(this.x+400-cameraperson.x, this.y+ 290-cameraperson.y, this.width, this.height); //hitbox
         //Draw Text
         ctx.fillStyle = "white";
@@ -31,4 +33,20 @@ class Enemy_Slime extends GameObject{
       takeDamage(damage) {
         this.hp -= damage;
       }
+      update(player_position){
+        
+       this.goTo(player_position.x,player_position.y);
+       
+    }  
+      
+      goTo(targetX, targetY){
+            const opp = targetY - this.y ;
+            const adj = targetX - this.x-10;
+        
+            const angle = Math.atan2(opp,adj)
+            this.x += Math.cos(angle)*this.speed
+            this.y += Math.sin(angle)*this.speed
+          
+        }
+    
 }

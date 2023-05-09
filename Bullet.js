@@ -73,7 +73,7 @@ class Bullet {
       }
 
       collideWith(sprite,cameraperson) {
-        if(this.tookdmg){
+         
         if (
           this.x < sprite.x+400-cameraperson.x + sprite.width &&
           this.x + this.width > sprite.x+400-cameraperson.x &&
@@ -88,7 +88,7 @@ class Bullet {
       
         return false;
         
-      }
+      
       }
 
       

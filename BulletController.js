@@ -12,7 +12,7 @@ class BulletController{
             bullet.draw(ctx,cameraperson);
             setTimeout(() => {
                 this.bullets.pop();
-            },70);
+            },10);
     })
     }
     collideWith(sprite,cameraperson) {
